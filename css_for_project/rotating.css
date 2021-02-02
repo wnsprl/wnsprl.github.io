@@ -1,0 +1,124 @@
+body{
+    width: 819.2px;
+    height: 716.8px;
+}
+
+*{margin: 0; padding: 0;}
+.title h1 {
+font-size: 45px;
+line-height: 1;
+margin: 10px 0;
+
+}
+.title h2 {
+font-size: 25px;
+line-height: 1;
+margin: 10px 0;
+
+}
+.stage{
+width: 400px;
+height: 100px;
+margin: 20% auto;
+margin-left: 40%;
+-webkit-perspective: 800;
+-ms-perspective: 800;
+-o-perspective: 800;
+-moz-perspective: 800px;
+perspective: 800;
+}
+.cube {
+transform-style: preserve-3d;
+margin:0 auto;
+height: 100px;
+width: 100px;
+position: relative;
+transition:all 1s;
+float: left;
+}
+.title{float: right;font-family: 'Ropa Sans', sans-serif;color:#fff;}
+.title h1{line-height: 1; font-size: 45px; margin: 10px 0;}
+.title h2{line-height: 1;}
+.cube div {
+text-align: center;
+line-height: 100px;
+height: 100px;
+width: 100px;
+position: absolute;
+color: #000;
+font-weight: bolder;
+}
+
+/* 정육면체 만들기 */
+.side_top {
+background:rgba(245, 245, 245, 0.8);
+top: -50px;
+left: 0px;
+transform: rotateX(90deg);
+}
+.side_bottom {
+background:rgba(245, 245, 245, 0.8);
+bottom: -50px;
+left: 0px;
+transform: rotateX(-90deg);
+}
+.side_front {
+background:rgba(245, 245, 245, 0.8);
+top: 0px;
+left: 0px;
+transform: translateZ(50px);
+}
+.side_back {
+background:rgba(245, 245, 245, 0.8);
+top: 0px;
+left: 0px;
+transform: translateZ(-50px);
+}
+.side_right {
+background:rgba(245, 245, 245, 0.8);
+top: 0px;
+right: -50px;
+transform: rotateY(90deg);
+}
+.side_left {
+background:rgba(245, 245, 245, 0.8);
+top: 0px;
+left: -50px;
+transform: rotateY(-90deg);
+}
+
+/* 정육면체 애니메이션 추가 */
+.cube{
+animation: MOVE 4s ease 0s infinite;
+}
+
+@keyframes MOVE {
+0% {transform: rotateX(0);}
+/* 33% {transform: rotateX(360deg);} */
+15% {transform: rotateX(-360deg);}
+30% {transform: rotateX(0deg);}
+
+/* 70% {transform: rotateY(0);} */
+45% {transform: rotateY(360deg);}
+60% {transform: rotateY(0deg);}
+
+75% {transform: rotateZ(360deg);}
+90% {transform: rotateZ(0deg);}
+
+}
+
+.stage{
+animation: Move2 8s ease 0s infinite;
+}
+
+@keyframes Move2{
+0%{transform: translate3d(0px,0px,0px);}
+12%{transform:translate3d(50%,280%,0)}
+24%{transform:translate3d(95%,100%,0)}
+36%{transform:translate3d(15%,-160%,0)}
+48%{transform:translate3d(-80%,20%,0)}
+60%{transform:translate3d(-10%,280%,0)}
+72%{transform:translate3d(100%,50%,0)}
+84%{transform:translate3d(20%,-200%,0)}
+100%{transform: translate3d(0px,0px,0px);}
+}

@@ -1,0 +1,139 @@
+body{
+            
+    background-image: url("/img_for_project/Andromeda2.jpg");
+    background-repeat: none;
+    background-size: cover;
+    width: 1024px;
+    height: 768px;
+    margin: auto;
+
+}
+div#before_login{
+    width: 80%;
+    height: 70%;
+    background-color: rgba(245, 245, 245, 0.7);
+    margin: auto;
+}
+div#before_login > p{
+    font-size: 2.5em;
+    font-weight: bolder;
+    color:white;
+    padding-top: 100;
+    text-align: center;
+} 
+div#after_login{
+    margin: auto;
+    display: none;
+}
+
+div#profile_board{
+    width: 80%;
+    height: 70%;
+    /* background-color: rgba(245, 245, 245, 0.7); */
+    background-color: rgba(0,0,0,0.7);
+    margin: auto;
+    display: none;
+    position: relative;
+    
+}
+div#toybox_board{
+    width: 80%;
+    height: 70%;
+    background-color: rgba(0,0,0,0.7);
+    margin: auto;
+    display: none;
+    position: relative;
+    
+}
+div#loadmapping_board{
+    width: 80%;
+    height: 70%;
+    background-color: rgba(0,0,0,0.7);
+    margin: auto;
+    display: none;
+    position: relative;
+    
+}
+div#loadmapping_board >iframe{
+    position: absolute; width:80%;height: 80%; top: 10% ;left: 10%; border: none;
+}
+div#profile_board >iframe{
+    position: absolute; width:80%;height: 80%; top: 10% ;left: 10%; border: none;
+}
+div#toybox_board >iframe{
+   position: absolute; width:100%;height: 100%;  border: whitesmoke solid 3px;
+}
+
+
+div#register-page{
+    width: 80%;
+    height: 70%;
+    background-color: rgba(245, 245, 245, 0.7);
+    margin: auto;
+    display: none;
+}
+div#registration-interface >iframe{
+    border-color: red;
+}
+
+div#login-panel{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+form{
+    font-weight: bold;
+    color: white;
+}
+#id_input{
+    border-style: none;
+}
+#pw_input{
+    border-style: none;
+}
+#register-button{
+    background-color: whitesmoke;
+    border-style: none;
+    color: black;
+    font-weight: bold;
+}
+#login-button{
+    border-style: none;
+    background-color:whitesmoke;
+    color: black;
+    font-weight: bold;
+}
+#main_page, #toybox_board{
+    display: none;
+}
+
+#loadmap_img{
+    position:absolute; 
+    top: 80%; right: 7%;
+}
+
+#profile_img{
+    position:absolute; 
+    top: 60%; 
+    left: 3%;
+}
+
+#toybox_img{
+   position: absolute; 
+   top: 3%; 
+   right: 3%;
+}
+
+#register-page{
+    position: relative;
+}
+
+#register-page > div{
+    width: 60%; height: 60%; position: absolute;
+    top: 20%; left: 20%; font-weight: bold; color: white;
+}
+
+#id_check_label{
+    color: red;
+}

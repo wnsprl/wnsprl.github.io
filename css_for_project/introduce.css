@@ -1,0 +1,21 @@
+body{
+    width: 655.36px; 
+    height: 768px; 
+    background-color: black;
+    color:lime;
+    margin: auto;
+    position: relative;
+}
+hr{
+    background-color: orangered;
+    height: 3px;
+    border: none;
+}
+#profile_picture{
+    width: 190px; 
+    height: 255px; 
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: yellow solid 3px;
+}

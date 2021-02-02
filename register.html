@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js_for_project/jquery-3.5.1.js"></script>
+    
+</head>
+<body>
+    <h2>회원가입 절차</h2>
+    <form action="">
+        <fieldset>
+        <label for="id_input">ID : &nbsp;</label>
+        <input type="text" id="id_input" placeholder="6~16자 입력">
+        <input type="button" id="id_check" value="아이디 조회">
+        <span id="id_check_label">아이디 조회를 클릭하세요</span>
+        <br>
+        <label for="pw_input">PW : </label>
+        <input type="password" id="pw_input" placeholder="비밀번호 입력 (6~16자)">
+            <br>
+            <br><br>
+            <label for="pw_check">PW확인 :</label>
+            <input type="password" id="pw_check" placeholder="비밀번호 확인">
+            <br>
+            <input type="button" id="final" value="회원가입">
+            <input type="button" value="back" id="back_to_login">
+        </fieldset>
+    </form>
+    <script>  
+    $("#back_to_login").on("click",function () {
+        // window.open("./index.html");
+        window.close("./register");
+    });
+    
+
+    $("#id_check").on("click",function () {
+        
+        var a=document.getElementById("id_input");
+
+        console.log(a.value.length);
+        if ((a.value.length<6) || (a.value.length>16)) {
+            alert("아이디를 양식에 맞게 입력하세요!");
+            a.value="";
+            return;
+        }
+        else{
+            console.log(a);
+            console.dir(a);
+            var $key = $("#id_input");
+            var value = localStorage[$key.val()];
+            if (value) {
+                alert("존재하는 아이디 입니다.");
+                a.value="";
+                return;
+            }
+            else{
+                alert("사용가능한 아이디 입니다.");
+                a.readOnly=true;
+                var b=document.getElementById("id_check_label");
+                b.innerText="사용가능한 아이디입니다.";
+                return;
+            }
+        }
+    });
+
+    $("#final").on("click",function () {
+       var a = document.getElementById("pw_input");
+       var b =document.getElementById("pw_check");
+       var c = document.getElementById("id_check_label");
+       
+       console.dir(a);
+       console.dir(b);
+      
+       if (a.value==b.value) {
+           if(a.value.length<6 || a.value.length>16){
+                alert("비밀번호양식이 맞지 않습니다.");
+                a.value="";
+                b.value="";
+               return;
+           }
+           else{
+               if(c.innerHTML=="사용가능한 아이디입니다."){
+                    var $key =$("#id_input");
+                    var $value=$("#pw_input");
+                    localStorage[$key.val()]=$value.val();
+                    $key.val('');
+                    $value.val('');
+                    b.value="";
+                    c.innerHTML="아이디 조회를 클릭하세요";
+                    window.close;
+
+                }
+                else{
+                    alert("아이디 조회 클릭하세요!");
+                    return;
+                }
+            }
+        }
+       else{
+           console.log("비밀번호 불일치");
+           a.value="";
+           b.value="";
+           return;
+       }
+
+    });
+    </script>
+
+
+</body>
+</html>
